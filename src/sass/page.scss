@@ -1,0 +1,22 @@
+@function  rem($val) {
+	@return $val/37.5+rem;
+}
+
+@import './common';
+@import './home';
+@import './goods';
+@import './list';
+@import './cart';
+.goods-item {
+    // padding: rem(8);
+    font-size: rem(14);
+	padding:rem(5);
+    img {
+        display: block;
+        margin: 0 auto rem(4);
+        width: 100%;
+    }
+    p {
+        margin: rem(5) 0;
+    }
+}

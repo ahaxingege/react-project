@@ -1,0 +1,114 @@
+.goods_cart {
+    .cartheader {
+        .cart_header {
+            display: flex;
+            justify-content: space-between;
+            padding: rem(15);
+            div:nth-child(1) {
+                font-size: rem(16);
+            }
+        }
+        .navLock {
+            position: fixed;
+            right: 0;
+            top: rem(40);
+            color: #fff;
+            font-size: 0.1rem;
+            width: rem(90);
+            div {
+                span {
+                    position: absolute;
+                    top: rem(-10);
+                    right: rem(14);
+                    width: 0;
+                    height: 0;
+                    border-left: rem(10) solid transparent;
+                    border-right: rem(10) solid transparent;
+                    border-bottom: rem(10) solid rgba(85, 85, 85, 0.95);
+                }
+                ul {
+                    border-radius: rem(5);
+                    background: rgba(85, 85, 85, 0.95);
+                    li {
+                        padding: rem(10);
+                        border-bottom: 1px solid #ccc;
+                        a {
+                            i {
+                                margin-right: rem(5);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .goods_checked {
+		position: relative;
+        padding: rem(10);
+		.store_name{
+			padding: rem(10) 0;
+		}
+		ul{
+			li{
+				height: 1.6rem;
+				.goods_check{
+					float: left;
+					margin-top: 0.7rem;
+				}
+				.goods_pic {
+					a {
+						display: inline-block;
+						width: 1.4rem;
+						height: 1.4rem;
+						background: #fff;
+						float: left;
+						img {
+							width: 100%;
+							height: 100%;
+							padding: rem(3);
+						}
+					}
+				}
+				.goods_name{
+					margin-left: 2rem;
+				}
+				.goods_price{
+					width: rem(285);
+					position: absolute;
+					bottom: rem(10);
+					right: rem(10);
+					div:nth-child(1){
+						float: left;
+						position: absolute;
+						bottom: rem(0);
+						left: rem(0);
+					}
+					div:nth-child(2){
+							float: right;
+							span{
+								display: inline-block;
+								width: rem(20);
+								height: rem(15);
+								font-size: rem(16);
+								padding: rem(5);
+								border: rem(1) solid #ccc;
+								text-align: center;
+								line-height: rem(15);
+								input{
+									display: inline-block;
+									font-size: rem(12);
+									width: rem(30);
+									height: rem(15);
+									text-align: center;
+									line-height: rem(15);
+									border: none;
+								}
+							}
+						
+					}
+				}
+			}
+		}
+        
+    }
+}

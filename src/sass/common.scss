@@ -1,0 +1,194 @@
+@function rem($val) {
+    @return $val/37.5 + rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+ul,
+li,
+dl,
+dt,
+dd {
+    list-style: none;
+}
+#root,
+.container {
+    @extend body;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    .tbs {
+        width: 100%;
+        height: rem(50);
+        font-size: rem(0);
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+		z-index: 100;
+        line-height: rem(50);
+        .tbs_left {
+            width: 35%;
+            text-align: center;
+			font-size: 0;
+            a:first-child {
+                float: left;
+                text-align: center;
+                display: inline-block;
+                width: 45%;
+                height: rem(48);
+                line-height: rem(48);
+                padding: rem(6) 0 0 0;
+                i {
+                    font-size: rem(14);
+                    display: block;
+                    width: 100%;
+                }
+                span {
+                    font-size: rem(14);
+                    width: 100%;
+                    display: inline-block;
+                    height: rem(25);
+                    line-height: rem(25);
+                }
+            }
+            a:last-child {
+                float: left;
+                text-align: center;
+                display: inline-block;
+                width: 55%;
+                height: rem(48);
+                line-height: rem(48);
+                padding: rem(6) 0 0 0;
+                i {
+                    font-size: rem(14);
+                    display: block;
+                    width: 100%;
+                }
+                span {
+                    font-size: rem(14);
+                    width: 100%;
+                    display: inline-block;
+                    height: rem(25);
+                    line-height: rem(25);
+                }
+            }
+        }
+        .tbs_right {
+            width: 65%;
+            font-size: rem(14);
+            text-align: center;
+            color: #ffffff;
+            a:first-child {
+                display: inline-block;
+                width: 45%;
+                background-color: #ed5564;
+            }
+            a:last-child {
+                display: inline-block;
+                width: 55%;
+                background-color: #fb6e52;
+            }
+        }
+    }
+}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+.container > .header {
+    height: rem(60);
+}
+.container > .content {
+    flex: 1;
+    overflow-y: auto;
+}
+.container > .am-tab-bar {
+    .am-tab-bar-bar {
+        height: rem(50) !important;
+    }
+    height: rem(50) !important;
+}
+
+.price span {
+    color: #f00;
+}
+.price span::before {
+    content: '￥';
+}
+.am-tab-bar-tab {
+    font-size: rem(24) !important;
+}
+.foot_nav {
+    .foot_nav_first {
+        padding: 0.4rem 0;
+        display: flex;
+        justify-content: space-between;
+        a {
+            flex: 1;
+            display: block;
+            text-align: center;
+        }
+    }
+    .foot_nav_second {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 0.2rem 0;
+        display: flex;
+        justify-content: space-between;
+        a {
+            flex: 1;
+            display: block;
+            text-align: center;
+            span {
+                display: inline-block;
+                width: 1rem;
+                height: 1rem;
+                margin: 0 auto 0.1rem auto;
+                border-radius: 100%;
+                i {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    background-size: 50%;
+                    border: 1px solid #ccc;
+                    border-radius: 50%;
+                }
+            }
+        }
+        a:nth-child(1) span i {
+            background-image: url('../img/foot_app.png');
+            background-repeat: no-repeat;
+        }
+        a:nth-child(2) span i {
+            background-image: url('../img/foot_touch.png');
+            background-repeat: no-repeat;
+        }
+        a:nth-child(3) span i {
+            background-image: url('../img/foot_pc.png');
+            background-repeat: no-repeat;
+        }
+    }
+    .foot_nav_third {
+        height: 0.5rem;
+        font-size: 0.2rem;
+        line-height: 0.5rem;
+        color: #555;
+        text-align: center;
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
+        margin-bottom: rem(10);
+    }
+}
