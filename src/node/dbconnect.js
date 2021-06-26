@@ -1,5 +1,5 @@
 const mongoose=require('mongoose')
-mongoose.connect('mongodb://localhost:27017/goods', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/demo', { useNewUrlParser: true });
 //链接数据库
 let db = mongoose.connection;
 //创建数据库对象

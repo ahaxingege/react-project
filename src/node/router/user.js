@@ -2,7 +2,7 @@ const express=require('express');
 const Router=express.Router();
 
 const userModel=require('../model/userModel.js');
-// const mail=require('../mail.js')
+const mail=require('../mail.js')
 const util=require('../utils/utli.js')
 /**
  * @api {post} /user/login/ login
@@ -21,7 +21,7 @@ Router.post('/login',(req,res)=>{
 	userModel.find( {us,pass})
 	.then((data)=>{
 	   console.log(data)
-	   if (data.length>=1) { return res.send('登录ok')}
+	   if (data.length>=1) { return res.send(util.sendData(0,'登陆成功！',null))}
 	   	res.send("登录失败")
 	})
 	
@@ -63,20 +63,21 @@ Router.post('/reg',(req,res)=>{
  * @apiSuccess {String} err Firstname of the User.
  * @apiSuccess {String} msg  Lastname of the User.
  */
-// Router.post('/getcode',(req,res)=>{
-// 	let {email}=req.body
-// 	if (!email||email=="") {return res.send(util.sendData(-1,'参数错误',null))}
-//     let num1=(parseInt(Math.random(0,1)*1000)).toString()
-//     //生成验证码
-// 	mail.sendmail(email,num1)
-// 	.then((resolve)=>{
-// 		obj[email]=num1
-// 		res.send(util.sendData(0,'验证码已发送',null))
-// 	})
-// 	.catch((err)=>{
-// 		console.log(err)
-// 		res.send(util.sendData(-1,'验证码发送失败',null))
-// 	})
-// 	
-// })
+Router.post('/getcode',(req,res)=>{
+	console.log(req)
+	let {email}=req.body
+	if (!email||email=="") {return res.send(util.sendData(-1,'参数错误',null))}
+    let num1=(parseInt(Math.random(0,1)*10000)).toString()
+    //生成验证码
+	mail.sendmail(email,num1)
+	.then((resolve)=>{
+		obj[email]=num1
+		res.send(util.sendData(0,'验证码已发送',null))
+	})
+	.catch((err)=>{
+		// console.log(err)
+		res.send(util.sendData(-1,'验证码发送失败',null))
+	})
+	
+})
 module.exports=Router;

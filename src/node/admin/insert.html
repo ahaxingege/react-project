@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>后台管理</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<style type="text/css">
+			#tmpimg {
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="topbar-wrap white">
+			<div class="topbar-inner clearfix">
+				<div class="topbar-logo-wrap clearfix">
+					<h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
+					<ul class="navbar-list clearfix">
+						<li><a class="on" href="index.html">首页</a></li>
+						<li><a href="#" target="_blank">网站首页</a></li>
+					</ul>
+				</div>
+				<div class="top-info-wrap">
+					<ul class="top-info-list clearfix">
+					<li id="users"><a href="#">管理员</a></li>
+					<li><a href="#">修改密码</a></li>
+					<li id="quit"><a href="#">退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container clearfix">
+			<div class="sidebar-wrap">
+				<div class="sidebar-title">
+					<h1>菜单</h1>
+				</div>
+				<div class="sidebar-content">
+					<ul class="sidebar-list">
+						<li>
+							<a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
+							<ul class="sub-menu">
+								<li><a href="design.html"><i class="icon-font">&#xe008;</i>作品管理</a></li>
+								<li><a href="design.html"><i class="icon-font">&#xe005;</i>博文管理</a></li>
+								<li><a href="design.html"><i class="icon-font">&#xe006;</i>分类管理</a></li>
+								<li><a href="design.html"><i class="icon-font">&#xe004;</i>留言管理</a></li>
+								<li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
+								<li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
+								<li><a href="design.html"><i class="icon-font">&#xe033;</i>广告管理</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"><i class="icon-font">&#xe018;</i>系统管理</a>
+							<ul class="sub-menu">
+								<li><a href="system.html"><i class="icon-font">&#xe017;</i>系统设置</a></li>
+								<li><a href="system.html"><i class="icon-font">&#xe037;</i>清理缓存</a></li>
+								<li><a href="system.html"><i class="icon-font">&#xe046;</i>数据备份</a></li>
+								<li><a href="system.html"><i class="icon-font">&#xe045;</i>数据还原</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--/sidebar-->
+			<div class="main-wrap">
+
+				<div class="crumb-wrap">
+					<div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a
+						 class="crumb-name" href="/jscss/admin/design/">作品管理</a><span class="crumb-step">&gt;</span><span>新增作品</span></div>
+				</div>
+				<div class="result-wrap">
+					<div class="result-content">
+						<!-- <form action="" method="" id="myform" name="" enctype=""> -->
+						<table class="insert-tab" width="100%">
+							<tbody>
+								<tr>
+									<th width="120"><i class="require-red">*</i>分类：</th>
+									<td>
+										<select name="search-sort" id="catid">
+											<option value="">全部</option>
+											<option value="19">玄幻</option>
+											<option value="20">穿越</option>
+											<option value="20">武侠</option>
+											<option value="20">科幻</option>
+											<option value="20">都市</option>
+										</select>
+											
+									</td>
+								</tr>
+								<tr>
+									<th><i class="require-red">*</i>标题：</th>
+									<td>
+										<input id="title" class="common-text required"  name="title" size="50" value="" type="text">
+									</td>
+								</tr>
+								<tr>
+									<th>作者：</th>
+									<td><input id="writer" class="common-text" name="author" size="50" value="admin" type="text"></td>
+								</tr>
+								<tr>
+									<th><i class="require-red">*</i>缩略图：</th>
+									<td>
+										<!-- <form enctype="multipart/form-data" method="post"> -->
+										<input type="file" id="imagelist">
+										<!-- </form> -->
+										<img id="tmpimg">
+										<button id="filebtn" type="button">上传</button>
+										<!-- <input type="button" name=""  value="" /> -->
+									</td>
+								</tr>
+								<tr>
+									<th>内容：</th>
+									<td><textarea name="content" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10"></textarea></td>
+								</tr>
+								<tr>
+									<th></th>
+									<td>
+										<input id="addbtn" class="btn btn-primary btn6 mr10" value="提交" type="button">
+											<input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- </form> -->
+					</div>
+				</div>
+
+			</div>
+			<!--/main-->
+		</div>
+	</body>
+	<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cookie.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		// $(function() {
+	 var name= getCookie('a');
+	 console.log(name);
+	 if(name!="undefined"){
+	$('#users').html('<a href="">'+name+'</a>')
+	}else{
+		$('#users').html('<a href="#">管理员</a>');
+		
+	}
+	 
+	
+	 $('#quit').on('click',function(){
+	 		console.log(123);
+	 		setCookie('a','',-1,'/');
+	 		self.location='login.html';
+	 });
+
+
+		var uploaded = false //图片没有上传
+		let OL_Action_Root = "http://127.0.0.1:3978"
+
+		function Req_ajax() {
+
+			console.log($("#imagelist")[0].files)
+			var formData = new FormData() //创建
+			console.log(formData)
+			// formData.append("name",'wangyi');
+
+			// console.log(formData.get('name'))//通过get获取formdata 值
+			formData.append("test", $("#imagelist")[0].files[0])
+			console.log(formData.get("test"))
+			$.ajax({
+				url: OL_Action_Root + '/api/book/img',
+				type: 'POST',
+				data: formData,
+				cache: false,
+				contentType: false,
+				processData: false,
+				success: function(data) {
+					console.log(data)
+					if (data.err == 0) {
+						$('#tmpimg').attr('src', 'http://127.0.0.1:3978/' + data.path)
+						uploaded = data.path
+						console.log(uploaded)
+					}
+				}
+			});
+		}
+		$('#filebtn').on('click', function() {
+			event.preventDefault()
+			Req_ajax();
+		})
+
+		function addbook() {
+			 if (uploaded) {
+			var bookdata = {
+				time:new Date().toLocaleString('chinese', { hour12: false }),
+				type:$("#catid option:selected").text(),
+				title: $('#title').val(),
+				writer: $('#writer').val(),
+				img: uploaded,
+				desc: $('#content').val(),
+			}
+			console.log(bookdata)
+			$.post(OL_Action_Root + "/api/book/addbook", bookdata, function(res) {
+				if (res.err == 0) {
+					 // layer_close()
+					 alert('上传成功')
+				} else {
+					alert(res.msg)
+				}
+			})
+			     	  }else{
+			      	  	alert('请先上传图片')
+			      	  }
+
+		}
+		$('#addbtn').on('click', addbook)
+		// })
+	</script>
+</html>
