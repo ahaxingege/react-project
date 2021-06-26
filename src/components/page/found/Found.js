@@ -5,7 +5,7 @@ class Found extends Component {
   render() {
     return (
       <div className="found">
-       FOUND
+        FOUND
       </div>
     );
   }
