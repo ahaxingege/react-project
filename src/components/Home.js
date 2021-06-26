@@ -39,8 +39,8 @@ class Home extends Component{
 			// console.log(data)
 // 			console.log(data.datas.list[1].goods.item)
 			this.setState({
-				ad:data.datas.list[0].adv_list.item,
-				goodslist:data.datas.list[1].goods.item,
+				// ad:data.datas.list[0].adv_list.item,
+				// goodslist:data.datas.list[1].goods.item,
 			});
 		});
     }
